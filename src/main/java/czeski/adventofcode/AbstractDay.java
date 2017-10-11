@@ -5,10 +5,10 @@ import java.io.*;
 
 abstract public class AbstractDay {
     protected String data;
-
+    protected String result;
 
     private String loadData() throws IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("data/Day01/input.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(getFilePath()));
 
         return bufferedReader.readLine();
     }
@@ -23,4 +23,10 @@ abstract public class AbstractDay {
     }
 
     public abstract void run();
+
+    protected abstract String getFilePath();
+
+    public String getResult(){
+        return result;
+    }
 }

@@ -50,9 +50,7 @@ public class Day01 extends AbstractDay {
             }
         }
 
-        int result = Math.abs(0 - x) + Math.abs(0 - y);
-
-        System.out.print(result);
+        result = String.valueOf(Math.abs(0 - x) + Math.abs(0 - y));
     }
 
     private List<String> getCleanedData(){
@@ -62,4 +60,8 @@ public class Day01 extends AbstractDay {
         return cleanData;
     }
 
+    @Override
+    protected String getFilePath() {
+        return "data/Day01/input.txt";
+    }
 }
