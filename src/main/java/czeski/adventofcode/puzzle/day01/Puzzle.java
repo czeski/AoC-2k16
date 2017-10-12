@@ -6,11 +6,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Puzzle extends AbstractPuzzle {
-    int x = 0 , y = 0;
+    protected String inputPath = "data/Day01/input.txt";
+    private int x = 0 , y = 0;
     private static final char RIGHT = 'R';
     private static final char LEFT = 'L';
     // 0 North, 1 East, 2 South, 3 West
-    int direction = 0;
+    private int direction = 0;
     private static final int NORTH = 0;
     private static final int EAST = 1;
     private static final int SOUTH = 2;
@@ -58,10 +59,5 @@ public class Puzzle extends AbstractPuzzle {
         cleanData = cleanData.stream().map(x -> x.trim()).collect(Collectors.toList());
 
         return cleanData;
-    }
-
-    @Override
-    protected String getFilePath() {
-        return "data/Day01/input.txt";
     }
 }

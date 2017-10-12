@@ -6,9 +6,10 @@ import java.io.*;
 abstract public class AbstractPuzzle {
     protected String data;
     protected String result;
+    protected String inputPath;
 
     private String loadData() throws IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(getFilePath()));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(getInputPath()));
 
         return bufferedReader.readLine();
     }
@@ -24,9 +25,15 @@ abstract public class AbstractPuzzle {
 
     public abstract void run();
 
-    protected abstract String getFilePath();
-
     public String getResult(){
         return result;
+    }
+
+    public String getInputPath() {
+        return inputPath;
+    }
+
+    public void setInputPath(String inputPath) {
+        this.inputPath = inputPath;
     }
 }
