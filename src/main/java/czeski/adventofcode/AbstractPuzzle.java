@@ -5,8 +5,9 @@ import java.io.*;
 
 abstract public class AbstractPuzzle {
     private BufferedReader dataBuffer;
+    private String inputPath;
     protected String result;
-    protected String inputPath;
+
 
     private void loadData() throws IOException{
         dataBuffer = new BufferedReader(new FileReader(getInputPath()));

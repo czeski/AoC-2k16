@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Puzzle extends AbstractPuzzle {
-    protected String inputPath = "data/Day01/input.txt";
     private int x = 0 , y = 0;
     private static final char RIGHT = 'R';
     private static final char LEFT = 'L';
@@ -18,6 +17,10 @@ public class Puzzle extends AbstractPuzzle {
     private static final int EAST = 1;
     private static final int SOUTH = 2;
     private static final int WEST = 3;
+
+    public Puzzle(){
+        setInputPath("data/Day02/input.txt");
+    }
 
     @Override
     public void run() throws IOException{
