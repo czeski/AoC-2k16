@@ -1,11 +1,11 @@
-package czeski.adventofcode.days;
+package czeski.adventofcode.puzzle.day01;
 
-import czeski.adventofcode.AbstractDay;
+import czeski.adventofcode.AbstractPuzzle;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Day01 extends AbstractDay {
+public class Puzzle extends AbstractPuzzle {
     int x = 0 , y = 0;
     private static final char RIGHT = 'R';
     private static final char LEFT = 'L';

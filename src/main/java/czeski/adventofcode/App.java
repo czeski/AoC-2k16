@@ -8,20 +8,20 @@ public class App
         if (args.length == 0){
             System.out.println("Usage: aoc [DAY]");
             System.out.println("Examples:");
-            System.out.println("\taoc Day01 - executes code for Day01");
-            System.out.println("\taoc Day01P2 - executes code for Day01 part 2");
+            System.out.println("\taoc Puzzle - executes code for Puzzle");
+            System.out.println("\taoc Day01P2 - executes code for Puzzle part 2");
             System.exit(0);
         }
 
-        String className = args[0];
+        String dayName = args[0];
 
         try {
-            Class dayClass = Class.forName("czeski.adventofcode.days." + className);
-            AbstractDay day = (AbstractDay)dayClass.getConstructor(null).newInstance();
+            Class puzzleClass = Class.forName("czeski.adventofcode.puzzle." + dayName + ".Puzzle");
+            AbstractPuzzle day = (AbstractPuzzle)puzzleClass.getConstructor(null).newInstance();
             day.start();
             System.out.println(day.getResult());
         }catch (ClassNotFoundException e){
-            System.out.println("Code for class " + className + " does not exist");
+            System.out.println("Code for class " + dayName + " does not exist");
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }

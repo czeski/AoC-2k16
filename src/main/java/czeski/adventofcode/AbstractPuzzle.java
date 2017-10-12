@@ -3,7 +3,7 @@ package czeski.adventofcode;
 
 import java.io.*;
 
-abstract public class AbstractDay {
+abstract public class AbstractPuzzle {
     protected String data;
     protected String result;
 
