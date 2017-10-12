@@ -1,6 +1,8 @@
 package czeski.adventofcode.puzzle.day01;
 
 import czeski.adventofcode.AbstractPuzzle;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,9 +19,9 @@ public class Puzzle extends AbstractPuzzle {
     private static final int SOUTH = 2;
     private static final int WEST = 3;
 
-
-    public void run() {
-        List<String> data = getCleanedData();
+    @Override
+    public void run() throws IOException{
+        List<String> data = prepareData();
         int value = 0;
 
         for (String trace: data) {
@@ -54,7 +56,8 @@ public class Puzzle extends AbstractPuzzle {
         result = String.valueOf(Math.abs(0 - x) + Math.abs(0 - y));
     }
 
-    private List<String> getCleanedData(){
+    private List<String> prepareData() throws IOException{
+        String data = getDataBuffer().readLine();
         List<String> cleanData = Arrays.asList(data.split(","));
         cleanData = cleanData.stream().map(x -> x.trim()).collect(Collectors.toList());
 

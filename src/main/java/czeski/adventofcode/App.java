@@ -16,7 +16,7 @@ public class App
         String dayName = args[0];
 
         try {
-            Class puzzleClass = Class.forName("czeski.adventofcode.puzzle." + dayName + ".Puzzle");
+            Class puzzleClass = Class.forName("czeski.adventofcode.puzzle." + dayName.toLowerCase() +".Puzzle");
             AbstractPuzzle day = (AbstractPuzzle)puzzleClass.getConstructor(null).newInstance();
             day.start();
             System.out.println(day.getResult());

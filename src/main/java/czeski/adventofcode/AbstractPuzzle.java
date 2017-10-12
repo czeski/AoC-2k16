@@ -4,36 +4,38 @@ package czeski.adventofcode;
 import java.io.*;
 
 abstract public class AbstractPuzzle {
-    protected String data;
+    private BufferedReader dataBuffer;
     protected String result;
     protected String inputPath;
 
-    private String loadData() throws IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(getInputPath()));
-
-        return bufferedReader.readLine();
+    private void loadData() throws IOException{
+        dataBuffer = new BufferedReader(new FileReader(getInputPath()));
     }
 
     public final void start(){
         try {
-            data = loadData();
+            loadData();
             run();
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
     }
 
-    public abstract void run();
+    protected abstract void run() throws IOException;
 
     public String getResult(){
         return result;
     }
 
-    public String getInputPath() {
+    private String getInputPath() {
         return inputPath;
     }
 
     public void setInputPath(String inputPath) {
         this.inputPath = inputPath;
+    }
+
+    protected BufferedReader getDataBuffer() {
+        return dataBuffer;
     }
 }
